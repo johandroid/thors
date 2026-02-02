@@ -1,0 +1,27 @@
+/target
+.env
+AGENTS.md
+CLAUDE.md
+dist
+.claude
+secrets/
+Cargo.lock
+.macaroon
+
+# Leptos build artifacts
+target/
+target/site/
+pkg/
+.leptos/
+hash.txt
+
+# WASM artifacts
+*.wasm
+wasm_bindgen_bg.wasm
+wasm_bindgen.js
+
+# Diesel
+diesel.toml
+
+# SQLx cache (legacy)
+.sqlx/
