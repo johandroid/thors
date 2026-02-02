@@ -13,7 +13,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=${DATABASE_URL:-postgres://$${POSTGRES_USER:-lightning}:$${DB_PASSWORD:-lightning}@db:5432/$${POSTGRES_DB:-lightning_payments}}
+      - DB_PASSWORD=${DB_PASSWORD:-test_db_password}
+      - DATABASE_URL=postgres://${POSTGRES_USER:-lightning}:${DB_PASSWORD}@db:5432/${POSTGRES_DB:-lightning_payments}
       - LND_ENDPOINT=${LND_ENDPOINT:-/run/secrets/lnd_receiver_endpoint}
       - LND_CERT_PATH=${LND_CERT_PATH:-/run/secrets/lnd_receiver_cert}
       - LND_MACAROON_PATH=${LND_MACAROON_PATH:-/run/secrets/lnd_receiver_macaroon}
